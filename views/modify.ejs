@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/main.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edit Post</h1>
+      <form action="/edit/post/<%= post.id %>" method="POST">
+        <% if(locals.post) {%>
+        <input type="text" name="title" placeholder="Title" value="<%= post.title%>"/><br />
+        <textarea type="text" name="content" placeholder="Content" rows="10"><%= post.content%></textarea><br />
+        <input type="text" name="author" placeholder="Author" value="<%= post.author%>" /><br />
+        <%}%>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
